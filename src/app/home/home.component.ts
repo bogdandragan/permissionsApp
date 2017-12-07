@@ -11,43 +11,44 @@ import {PermissionsUser} from "../models/permissionsUser";
 })
 export class HomeComponent implements OnInit {
 
-  permissions : Array<Permission>;
-  permissionUsers: Array<PermissionsUser>;
-  allPermissionsUsers: Array<PermissionsUser>;
+  permissions:Array<Permission>;
+  permissionUsers:Array<PermissionsUser>;
+  allPermissionsUsers:Array<PermissionsUser>;
 
-  constructor(private permissionsService: PermissionsService,
-              private usersService: UsersService) { }
+  constructor(private permissionsService:PermissionsService,
+              private usersService:UsersService) {
+  }
 
   ngOnInit() {
     this.getAllPermissions();
     this.usersService.getUsers().subscribe(
         data => {
-            this.allPermissionsUsers = data;
-            this.permissionUsers = this.allPermissionsUsers;
-        },
+        this.allPermissionsUsers = data;
+        this.permissionUsers = this.allPermissionsUsers;
+      },
         err => {
-          console.log(err);
-        }
+        console.log(err);
+      }
     );
   }
 
-  getAllPermissions(){
+  getAllPermissions() {
     this.permissionsService.getPermissions().subscribe(
         data => {
-          this.permissions = data;
-        },
+        this.permissions = data;
+      },
         err => {
-          console.log(err);
-        }
+        console.log(err);
+      }
     );
   }
 
-  onSelectPermission(permission: Permission){
+  onSelectPermission(permission:Permission) {
     this.permissionUsers = permission.users;
   }
 
-  onSelectAllPermissions(){
-      this.permissionUsers = this.allPermissionsUsers;
+  onSelectAllPermissions() {
+    this.permissionUsers = this.allPermissionsUsers;
   }
 
 }

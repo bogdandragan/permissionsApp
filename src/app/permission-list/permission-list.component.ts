@@ -8,26 +8,27 @@ import {Permission} from "../models/permission";
 })
 export class PermissionListComponent implements OnInit {
 
-    @Input() permissions: Array<Permission>;
-    @Output() SelectPermission = new EventEmitter();
-    @Output() SelectAllPermissions = new EventEmitter();
+  @Input() permissions:Array<Permission>;
+  @Output() SelectPermission = new EventEmitter();
+  @Output() SelectAllPermissions = new EventEmitter();
 
-    selectedPermission : Permission;
+  selectedPermission:Permission;
 
-    constructor() { }
+  constructor() {
+  }
 
-    ngOnInit() {
+  ngOnInit() {
 
-    }
+  }
 
-    onPermissionSelect(permission: Permission){
-        this.selectedPermission = permission;
-        this.SelectPermission.emit(permission)
-    }
+  onPermissionSelect(permission:Permission) {
+    this.selectedPermission = permission;
+    this.SelectPermission.emit(permission)
+  }
 
-    onAllPermissionsSelect(){
-        this.selectedPermission = null;
-        this.SelectAllPermissions.emit();
-    }
+  onAllPermissionsSelect() {
+    this.selectedPermission = null;
+    this.SelectAllPermissions.emit();
+  }
 
 }
