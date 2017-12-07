@@ -41,7 +41,10 @@ export class InMemoryDataService implements InMemoryDbService {
                 {name: 'surgical', enabled: true}
             ],
                 logins: [
-                    {date: '', count: ''},
+                    {date: '2017-12-01', visits: 2},
+                    {date: '2017-12-03', visits: 3},
+                    {date: '2017-12-05', visits: 5},
+                    {date: '2017-12-06', visits: 1},
                 ]
             },
             {
@@ -51,9 +54,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 {name: 'meta', enabled: true},
                 {name: 'surgical', enabled: true}
             ],
-                logins: [
-                    {date: '', count: ''},
-                ]
+              logins: [
+                {date: '2017-11-28', visits: 3},
+                {date: '2017-11-30', visits: 4},
+                {date: '2017-12-01', visits: 5},
+                {date: '2017-12-04', visits: 2},
+              ]
             },
             {
                 id: 3, username: 'jazzy@analysisworks.com', firstname: '', lastname: '', permissions: [
@@ -62,9 +68,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 {name: 'meta', enabled: true},
                 {name: 'surgical', enabled: false}
             ],
-                logins: [
-                    {date: '', count: ''},
-                ]
+              logins: [
+                {date: '2017-11-29', visits: 1},
+                {date: '2017-12-01', visits: 2},
+                {date: '2017-12-03', visits: 3},
+                {date: '2017-12-05', visits: 2},
+              ]
             },
             {
                 id: 4, username: 'test@analysisworks.com', firstname: '', lastname: '', permissions: [
@@ -73,9 +82,12 @@ export class InMemoryDataService implements InMemoryDbService {
                 {name: 'meta', enabled: true},
                 {name: 'surgical', enabled: false}
             ],
-                logins: [
-                    {date: '', count: ''},
-                ]
+              logins: [
+                {date: '2017-12-01', visits: 2},
+                {date: '2017-12-03', visits: 3},
+                {date: '2017-12-05', visits: 1},
+                {date: '2017-12-06', visits: 4},
+              ]
             }
         ];
 

@@ -1,4 +1,8 @@
 <ul class="nav nav-pills nav-stacked">
-  <li (click)="onAllPermissionsSelect()"><a>All</a></li>
-  <li (click)="onPermissionSelect(permission)" *ngFor="let permission of permissions"><a>{{permission.name}}</a></li>
+  <li (click)="onAllPermissionsSelect()" [ngClass]="{'active': selectedPermission == null}"><a>All</a></li>
+  <li (click)="onPermissionSelect(permission, i)"
+      *ngFor="let permission of permissions;"
+      [ngClass]="{'active': selectedPermission == permission}">
+    <a>{{permission.name}}</a>
+  </li>
 </ul>

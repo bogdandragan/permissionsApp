@@ -12,6 +12,8 @@ export class PermissionListComponent implements OnInit {
     @Output() SelectPermission = new EventEmitter();
     @Output() SelectAllPermissions = new EventEmitter();
 
+    selectedPermission : Permission;
+
     constructor() { }
 
     ngOnInit() {
@@ -19,10 +21,12 @@ export class PermissionListComponent implements OnInit {
     }
 
     onPermissionSelect(permission: Permission){
+        this.selectedPermission = permission;
         this.SelectPermission.emit(permission)
     }
 
     onAllPermissionsSelect(){
+        this.selectedPermission = null;
         this.SelectAllPermissions.emit();
     }
 
